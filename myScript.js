@@ -36,29 +36,86 @@ const app = new Vue (
         data: {
             imagesArray: ['img/01.jpg', 'img/02.jpg', 'img/03.jpg', 'img/04.jpg', 'img/05.jpg'],
             activeImage: 0,
+            invertDirection: true,
+            previousInterval: '',
+            nextInterval:'',
+            //disabled: undefined
             // visibleClass: '',
         },
         methods: {
 
-            nextImage: function(){
-                if(this.activeImage < this.imagesArray.length-1){
+            // nextImage: function(){
+            //     this.disabled = 'disabled'
+            //     const nextInterval = setInterval(() =>{
+            //     if(this.activeImage < this.imagesArray.length - 1){
 
-                this.activeImage++
+            //     this.activeImage++
+            //     }
+            //     else{
+            //     this.activeImage = 0
+            //     }
+            // }, 3000);
+            // },
+
+            inverseDirectionImage: function(){
+                console.log(event)
+                if (this.invertDirection === false){
+
+                    this.invertDirection = true
+
+                    clearInterval(this.nextInterval)
+
+                    this.previousInterval = setInterval(() =>{    
+                        
+
+                        if(this.activeImage > 0){
+
+                            this.activeImage--
+                        
+                        }
+                        
+                        else{
+
+                            this.activeImage = this.imagesArray.length - 1
+
+                        }
+
+
+
+                    }, 3000);
+
+                    console.log(this.previousInterval)
+
                 }
                 else{
-                this.activeImage = 0
+
+                    this.invertDirection = false
+
+                    clearInterval(this.previousInterval)
+
+                    this.nextInterval = setInterval(() =>{
+
+                
+                        if(this.activeImage < this.imagesArray.length - 1){
+    
+                            this.activeImage++
+                    
+                        }
+                            
+                        else{
+                            
+                            this.activeImage = 0
+                            
+                        }
+                
+                    }, 3000);
+
+                    console.log(this.nextInterval)
+
                 }
             },
 
-            previousImage: function(){
-                if(this.activeImage > 0){
-
-                this.activeImage--
-                }
-                else{
-                this.activeImage = this.imagesArray.length - 1
-                }
-            },
+            
 
             // isVisibleThumb: function(){
 
