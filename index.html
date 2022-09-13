@@ -14,8 +14,9 @@
     <div class="container" id="root">
         <div class="row p-0 position-relative">
             <div id="images-container" class="col-10 p-0">
-                <img v-for="image in imagesArray" class="img-fluid w-100 ae-h50" :src="image" :alt="image">
 
+                <img class="img-fluid w-100 ae-h50" :src="imagesArray[activeImage]" :alt="imagesArray[activeImage]">
+            
             </div>
             <div id="thumbs-container" class="col-2 p-0">
                 <!-- <img class="img-fluid w-100 d-none ae-active" src="img/01.jpg" alt="">
@@ -32,8 +33,8 @@
                 <img class="img-fluid w-100 ae-h50 d-none" src="img/05.jpg" alt="">
             </div> -->
             <div class="col-12 p-0 d-flex justify-content-between position-absolute top-50 traslate-middle">
-                <button id="previous">&larr;</button>
-                <button id="next">&rarr;</button>
+                <button id="previous"  @click="previousImage">&larr;</button>
+                <button id="next"  @click="nextImage">&rarr;</button>
             </div>
         </div>
     </div>
