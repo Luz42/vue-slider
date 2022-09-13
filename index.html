@@ -19,6 +19,8 @@
             
             </div>
             <div id="thumbs-container" class="col-2 p-0">
+                                                                                            <!-- è possibile inserire delle condizioni all'interno della classe!! -->
+                <img v-for="(image, index) in imagesArray" class="img-fluid w-100 ae-h50" :class="(activeImage === index) ? 'ae-active' : ''" :src="image" :alt="image">
                 <!-- <img class="img-fluid w-100 d-none ae-active" src="img/01.jpg" alt="">
                 <img class="img-fluid w-100 d-none" src="img/02.jpg" alt="">
                 <img class="img-fluid w-100 d-none" src="img/03.jpg" alt="">

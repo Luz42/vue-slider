@@ -35,7 +35,8 @@ const app = new Vue (
         el: '#root',
         data: {
             imagesArray: ['img/01.jpg', 'img/02.jpg', 'img/03.jpg', 'img/04.jpg', 'img/05.jpg'],
-            activeImage: 0
+            activeImage: 0,
+            // visibleClass: '',
         },
         methods: {
 
@@ -57,7 +58,17 @@ const app = new Vue (
                 else{
                 this.activeImage = this.imagesArray.length - 1
                 }
-            }
+            },
+
+            // isVisibleThumb: function(){
+
+            //     if(this.imagesArray.findIndex(this.imagesArray[this.activeImage]) === this.activeImage){
+
+            //         this.visibleClass = 'ae-active'
+
+            //     }                    
+
+            // }
 
             
 
