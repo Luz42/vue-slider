@@ -27,3 +27,16 @@ quando clicco su un bottone questa classe attiva cambierà quella corrente e que
 
 il bottone avrà un contatore che andrà ad aumentare il valore fino al <array.lenght
 */
+
+
+//è stato creato l'array e con un ciclo v-for le immagini vengono stampate
+const app = new Vue (
+    {
+        el: '#root',
+        data: {
+            imagesArray: ['img/01.jpg', 'img/02.jpg', 'img/03.jpg', 'img/04.jpg', 'img/05.jpg']
+
+
+        }
+    }
+)

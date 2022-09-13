@@ -11,9 +11,10 @@
     <title>Vue Carousel</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="root">
         <div class="row p-0 position-relative">
             <div id="images-container" class="col-10 p-0">
+                <img v-for="image in imagesArray" class="img-fluid w-100 ae-h50" :src="image" :alt="image">
 
             </div>
             <div id="thumbs-container" class="col-2 p-0">
