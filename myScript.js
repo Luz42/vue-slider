@@ -42,6 +42,13 @@ const app = new Vue (
             //disabled: undefined
             // visibleClass: '',
         },
+
+        //EUREKA!!! xD
+
+        mounted(){
+            console.log('mounted')
+        },
+
         methods: {
 
             // nextImage: function(){
@@ -58,7 +65,6 @@ const app = new Vue (
             // },
 
             inverseDirectionImage: function(){
-                console.log(event)
                 if (this.invertDirection === false){
 
                     this.invertDirection = true
@@ -115,22 +121,21 @@ const app = new Vue (
                 }
             },
 
-            
-
             // isVisibleThumb: function(){
 
             //     if(this.imagesArray.findIndex(this.imagesArray[this.activeImage]) === this.activeImage){
 
-            //         this.visibleClass = 'ae-active'
+            //     this.visibleClass = 'ae-active'
 
             //     }                    
 
-            // }
-
+            // }   
             
+            selectThumbImage(index){
 
-            
+                this.activeImage = index
 
-        }
+            }
+        },
     }
 )
